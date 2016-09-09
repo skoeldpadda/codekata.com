@@ -13,12 +13,12 @@ As stated by the author of [codekata.com][codekata]:
 ##Pitfalls of the task
 * It's about modelling, not about implementation. I regularly notice myself pondering about how this or that decision will affect the implementation...
 
-##Basic definitions and approaches
-> **Product**: a product with a name, e.g. "Tomatoes" or "Water of Brand XY"
-> **Item**: an instance of a product, with a quantity (either count or weight)
-> **Basket**: a set of items, where there exists at most one item for each product.
+##Basic definitions and design decisions (valid for all models)
+> **Product**: a product with a name, e.g. "Tomatoes" or "Water of Brand XY"  
+> **Item**: an instance of a product, with a quantity (either count or weight)  
+> **Basket**: a set of items, where there exists at most one item for each product.  
 
-> _Price ambiguities_: price ambiguities are to be resolved by using those prices that lead to a minimum total value of a given basket.
+> _Price ambiguities_: price ambiguities are to be resolved by using those prices that lead to a minimum total value of a given basket. Note that this decision can lead to difficulties in implementation, since provably finding the optimal solution might even be a NP-hard problem (to be investigated).
 
 ##Supermarket Pricing Models
 
@@ -31,7 +31,14 @@ As stated by the author of [codekata.com][codekata]:
 * This enables offers involving more than one product, e.g. "buy two of A and two of B for 10$".
 
 ###Model M3: Only one simple price per product, offers as a subclass of Product.
+**Pro**
+
 * This approach seems to be quite straight-forward yet powerful.
+
+**Con**
+
+* On the other hand, it's a bit ugly and confusing to calculate the amount of money that is to be substracted from the original, simple price.
+* _The responsibility for determining prices lies outside of the actual prices._ That seems to be unclean.
 
 
 ##Model validation
@@ -39,6 +46,6 @@ As stated by the author of [codekata.com][codekata]:
 * Answering some appropriate questions:
  * How can the example offers _O1_ - _O4_ be modeled?
  * Is the stock value of 100 cans as given in the original task clearly defined?
-* **Mock implementation**, without working implementation of algorithms. Maybe written as a top-level testcase?
+* **Mock implementation**, without working implementation of algorithms. Maybe written as a top-level testcase? _This seems to work quite well! Simply writing down the testcase gives a lot of insight into whether the model is easy to use and comprehensible._
 
 [codekata]: www.codekata.com

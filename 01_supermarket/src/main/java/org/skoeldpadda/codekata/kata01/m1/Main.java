@@ -1,4 +1,4 @@
-package org.skoeldpadda.codekata;
+package org.skoeldpadda.codekata.kata01.m1;
 
 public class Main {
 

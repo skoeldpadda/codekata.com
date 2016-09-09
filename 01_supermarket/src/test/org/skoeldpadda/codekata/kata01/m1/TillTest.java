@@ -1,4 +1,4 @@
-package org.skoeldpadda.codekata;
+package org.skoeldpadda.codekata.kata01.m1;
 
 import org.junit.Test;
 
@@ -14,6 +14,8 @@ public class TillTest {
         Product pTomatoes = new Product("Tomatoes", false);
 
         // Each product can have several prices
+        Price simple = new SimplePrice(10.0);
+        Price three_for_a_dollar = new DiscountPrice(3, 7.0);
 
         // Our supermarket basket
         Item[] items = new Item[] {
