@@ -10,8 +10,6 @@ def chop_iterative(value, ints):
 
         if numElements == 0:
             return -1
-        elif numElements == 1:
-            return lowerBound if ints[lowerBound] == value else -1
         
         pivotIndex = lowerBound + math.floor(numElements / 2.0)
         pivotValue = ints[pivotIndex]
