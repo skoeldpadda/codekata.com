@@ -21,6 +21,12 @@ def chop_iterative(value, ints):
         elif pivotValue > value:
             upperBound = pivotIndex
 
+def chop_recursive(value, ints):
+    return -1
+
+def chop_functional(value, ints):
+    return -1
+    
 class TestChopping(unittest.TestCase):
     def test_iterative(self):
         self.chopTestTemplate(chop_iterative)
