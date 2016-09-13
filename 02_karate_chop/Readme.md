@@ -17,3 +17,10 @@
 2. errenous handling of current search window
 3. (was able to remove duplicate check for a special case)
 
+##Technique 2: recursive approach
+###Notes
+* it's necessary to determine the global index from the local index within an subarray, which appears not to be straight-forward to solve in an elegant way -- I solved it using a function which combines the indices
+
+###Encountered errors
+1. again a typo, leading to a type error
+2. off-by-one error in the recombination of the results of the recursive calls
