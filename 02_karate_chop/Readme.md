@@ -20,7 +20,18 @@
 ##Technique 2: recursive approach
 ###Notes
 * it's necessary to determine the global index from the local index within an subarray, which appears not to be straight-forward to solve in an elegant way -- I solved it using a function which combines the indices
+* nevertheless, this one is easy and fast to write
 
 ###Encountered errors
 1. again a typo, leading to a type error
 2. off-by-one error in the recombination of the results of the recursive calls
+
+##Technique 3: functional approach
+###Notes
+* I came to ask myself whether the recursive approach isn't already a functional one. Indeed I think that this is more or less the case (of course one would have to inline the variable assignments...). Let's write a purely functional binary search in Haskell! The result is indeed very similar to the recursive approach -- in my eyes, the readability is a bit better because the different cases can be seperated in a clean way using pattern matching.
+* Writing the functional one is much less fun than expected: Splitting the list, getting a pivot element, ...
+* It took me more time to write this one than the previous one, most likely due to the fact that I'm less fluent in Haskell than in Python.
+
+###Encountered errors
+1. a parse error, I didn't exactly stick to the Haskell syntax
+
